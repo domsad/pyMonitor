@@ -23,10 +23,8 @@ def disk_stats():
 
 @app.route("/")
 def index():
-    stats = monitor.get_all()
-    return render_template("index.html", stats=stats)
-
-
+    allstats = monitor.get_all()
+    return render_template("index.html", stats=allstats)
 
 if __name__ == "__main__":
     app.run(debug=True)
