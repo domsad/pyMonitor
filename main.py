@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from monitor import Monitor
 
 app = Flask(__name__)
@@ -21,7 +21,10 @@ def ram_stats():
 def disk_stats():
     return jsonify(monitor.disk_stat())
 
-
+@app.route("/")
+def index():
+    stats = monitor.get_all()
+    return render_template("index.html", stats=stats)
 
 
 
