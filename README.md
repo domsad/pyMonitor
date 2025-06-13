@@ -1,5 +1,15 @@
 # pyMonitor
 
+### TODO:
+- kod w index.html wypada rozdzielić na css js i html
+- można zrobić dla requestów api tzw Swagger UI (https://swagger.io/tools/swagger-ui/) chodzi o krótką dokumentację dla api requestów
+- prezentacja i readme // ewentualnie po prostu można spróbować zaprezentować w readme program jak w innych projektach na githubie
+- poszukać jakiś bugów ale chyba i tak będziemy prezentować na czyimś lapku więc tylko na nim może działać xd
+- można rozbudować ten projekt jak jakiś pomysł masz
+
+
+### Zmienić vvv sformatować
+
 Po pobraniu projektu wykonaj:
 
 Na windows:
