@@ -3,69 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>pyMonitor - Statystyki systemu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .stat {
-            background: white;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        pre {
-            font-size: 14px;
-            white-space: pre-wrap; /* aby dłuższe teksty się łamały */
-        }
-    </style>
-    <script>
-        function fetchStats() {
-            fetch("/api/stats")
-                .then(res => res.json())
-                .then(data => {
-                    // CPU
-                    document.getElementById("cpu").innerText = formatObject(data.cpu);
-
-                    // GPU
-                    document.getElementById("gpu").innerText = formatObject(data.gpu);
-
-                    // RAM
-                    document.getElementById("ram").innerText = formatObject(data.ram);
-
-                    // Dysk
-                    document.getElementById("dysk").innerText = formatObject(data.dysk);
-
-                    // Sieć
-                    document.getElementById("network").innerText = formatObject(data.sieć);
-
-                    // System
-                    document.getElementById("system").innerText = formatObject(data.system);
-
-                    // Uptime
-                    document.getElementById("uptime").innerText = formatObject(data["czas działania systemu"]);
-                });
-        }
-
-        function formatObject(obj) {
-            if (!obj) return "Brak danych";
-            return Object.entries(obj)
-                .map(([key, value]) => {
-                    if (Array.isArray(value)) return `${key}: ${value.join(", ")}`;
-                    else if (typeof value === "object") return `${key}:\n${formatObject(value).replace(/^/gm, "  ")}`;
-                    else return `${key}: ${value}`;
-                })
-                .join("\n");
-        }
-
-        setInterval(fetchStats, 3000); // Odświeżanie co 3 sekundy
-        window.onload = fetchStats;
-    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
     <h1>pyMonitor - Statystyki systemu</h1>

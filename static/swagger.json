@@ -1,0 +1,121 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "pyMonitor - API",
+      "description": "API do monitorowania statystyk systemowych.",
+      "version": "1.0.0"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/api/stats": {
+        "get": {
+          "summary": "Zwraca wszystkie statystyki systemowe.",
+          "responses": {
+            "200": {
+              "description": "Sukces",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cpu": {
+                    "type": "object"
+                  },
+                  "gpu": {
+                    "type": "object"
+                  },
+                  "ram": {
+                    "type": "object"
+                  },
+                  "dysk": {
+                    "type": "object"
+                  },
+                  "sieć": {
+                    "type": "object"
+                  },
+                  "system": {
+                    "type": "object"
+                  },
+                  "czas działania systemu": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/stats/cpu": {
+        "get": {
+          "summary": "Zwraca statystyki CPU.",
+          "responses": {
+            "200": {
+              "description": "Sukces",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cpu_usage": {
+                    "type": "string"
+                  },
+                  "cpu_temperature": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/stats/ram": {
+        "get": {
+          "summary": "Zwraca statystyki RAM.",
+          "responses": {
+            "200": {
+              "description": "Sukces",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "string"
+                  },
+                  "used": {
+                    "type": "string"
+                  },
+                  "free": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/stats/disk": {
+        "get": {
+          "summary": "Zwraca statystyki dysku.",
+          "responses": {
+            "200": {
+              "description": "Sukces",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "string"
+                  },
+                  "used": {
+                    "type": "string"
+                  },
+                  "free": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
