@@ -52,6 +52,37 @@ def disk_stats():
     return jsonify(monitor.disk_stat())
 
 
+@app.route("/api/stats/gpu")
+def gpu_stats():
+    """Zwraca statystyki GPU
+    ---
+    responses:
+      200:
+        description: Statystyki karty graficznej
+    """
+    return jsonify(monitor.gpu_stat())
+
+@app.route("/api/stats/network")
+def network_stats():
+    """Zwraca statystyki sieciowe
+    ---
+    responses:
+      200:
+        description: Statystyki interfejsów sieciowych
+    """
+    return jsonify(monitor.network_stat())
+
+@app.route("/api/stats/system")
+def system_stats():
+    """Zwraca statystyki systemu operacyjnego
+    ---
+    responses:
+      200:
+        description: Statystyki systemowe (OS)
+    """
+    return jsonify(monitor.system_stat())
+
+
 # Główna strona projektu renderuje plik html z danymi z api
 @app.route("/")
 def index():
