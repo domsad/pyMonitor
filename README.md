@@ -11,14 +11,14 @@ Po sklonowaniu repozytorium lub pobraniu programu należy włączyć konsole pol
 ```bash
 python3 -m venv .venv
 .venv\Scripts\activate
-pip install psutil py-cpuinfo flask gputil
+pip install psutil py-cpuinfo flask flasgger gputil
 ```
 
 ###  Dla Linux:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install psutil py-cpuinfo flask gputil
+pip install psutil py-cpuinfo flask flasgger gputil
 ```
 
 ---
