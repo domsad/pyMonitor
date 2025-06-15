@@ -2,15 +2,9 @@ import psutil, cpuinfo, platform, time, socket, GPUtil, subprocess
 
 
 class Monitor:
-    # Można popatrzeć co oferują jeszcze ciekawego te biblioteki i dodać
-    # Albo dodać jakąś inną bibliotekę
-    # Doku cpuinfo - https://github.com/workhorsy/py-cpuinfo
-    # Potężna dokumentacja psutil - https://psutil.readthedocs.io/en/latest/#
 
     def cpu_stat(self):
         # Pobiera z biblioteki cpuinfo informacje o cpu
-        # Doku - https://github.com/workhorsy/py-cpuinfo
-
         cpu_stats = cpuinfo.get_cpu_info()
         
         return {
