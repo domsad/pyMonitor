@@ -5,11 +5,11 @@
 ---
 
 ##  Instalacja
-Po pobraniu programu należy włączyć konsole poleceń i wykonać nastepujące komendy:
+Po sklonowaniu repozytorium lub pobraniu programu należy włączyć konsole poleceń i wykonać nastepujące komendy:
 
 ###  Dla Windows:
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 .venv\Scripts\activate
 pip install psutil py-cpuinfo flask gputil
 ```
@@ -27,7 +27,7 @@ pip install psutil py-cpuinfo flask gputil
 Po zainstalowaniu wymaganych bibliotek uruchom program poleceniem:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Aplikacja będzie dostępna pod adresem:
